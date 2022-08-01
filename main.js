@@ -47,10 +47,9 @@ function addPrice() {
     let totalSummed = arrayFloat.map(i => x += i, x = 0).reverse()[0]
     const updateLocal = () => {
         localStorage.setItem('newProduct', JSON.stringify(newProduct))
-        localStorage.setItem('summed', JSON.stringify(arraySummed))
+        localStorage.setItem('summed', JSON.stringify(totalSummed))
     }
     updateLocal();
-    console.log(totalSummed)
     addHTMLList();
     valProduct.value = '';
     valPrice.value = '';
