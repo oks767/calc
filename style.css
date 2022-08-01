@@ -51,3 +51,18 @@
     font-family: 'Mulish';
     font-size: 20px;
 }
+.result__item span{
+    font-family: 'Mulish';
+    font-size: 20px;
+}
+.summed{
+    font-family: 'Mulish';
+    font-size: 20px;
+    border: none;
+    margin-left: 100px;
+}
+.total {
+    border-bottom: 2px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+}

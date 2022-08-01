@@ -4,6 +4,7 @@ let valPrice = document.getElementById('content-1');
 let result = document.querySelector('.result')
 document.getElementById('add-price').onclick = addPrice;
 let arraySummed = [];
+let summedValue = document.getElementById('summed');
 // проверка наличия элементов в хранилище
 !localStorage.newProduct ? newProduct = [] : newProduct = JSON.parse(localStorage.getItem('newProduct'));
 
@@ -14,10 +15,9 @@ function Product(description, price) {
 
 };
 
-// function Summed (name, summa){
-//     this.name = 'Сумма',
-//     this.summa = valPrice.value;
-// }
+
+
+
 const createTemplate = (task, index) => {
     return `
     <div class="result__item">
@@ -34,26 +34,27 @@ let addHTMLList = () => {
         })
     }
 }
-// добавление суммы цен
-// function summedPrices (Summed) {
-//     let sum = 0;
-//     for (let property of Object.values(Summed)){
-//         sum += salary;
-//     }
-//     return sum;
-// }
+
+
+
 
 //  функия-событие 
 function addPrice() {
+    event.preventDefault();
     newProduct.push(new Product(valProduct.value, valPrice.value)); // значение инпутов в массиве
-    arraySummed.push(new Summed(name, valPrice.value))
+    arraySummed.push(valPrice.value);
+    let arrayFloat = arraySummed.map(parseFloat);
+    let totalSummed = arrayFloat.map(i => x += i, x = 0).reverse()[0]
     const updateLocal = () => {
         localStorage.setItem('newProduct', JSON.stringify(newProduct))
-        localStorage.setItem('summed', JSON.stringify())
+        localStorage.setItem('summed', JSON.stringify(arraySummed))
     }
     updateLocal();
+    console.log(totalSummed)
     addHTMLList();
     valProduct.value = '';
     valPrice.value = '';
+    summedValue.value = totalSummed;
+
 }
 
