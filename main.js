@@ -56,4 +56,3 @@ function addPrice() {
     summedValue.value = totalSummed;
 
 }
-
